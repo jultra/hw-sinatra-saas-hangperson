@@ -1,8 +1,0 @@
-Still TBD for final version:
-
-- explain views/layout.erb
-- explain Procfile
-
-- remove this file
-- merge everything to master
-
