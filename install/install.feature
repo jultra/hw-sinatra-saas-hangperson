@@ -2,6 +2,7 @@ Feature: Installation of dependencies
   In order to check that the supplied homework can be graded by AutoGrader
   As an AutoGrader deployer
   I need to check the installation
+  #.
 
   Scenario: Install or check skeleton
     Given that I am in the project root directory "hw-sinatra-saas-hangperson-ci"
