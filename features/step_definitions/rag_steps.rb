@@ -86,7 +86,6 @@ Then /^I restore the reference application$/ do
   expect(File.read "#{ref_app_controller}").to eql File.read("#{plain_controller}")
 end
 
-
 def run_ag(subject, spec)
   run_process "./grade3 -a #{RAG_HW_PATH}/#{@reference_app_path} #{RAG_HW_PATH}/#{subject} #{RAG_HW_PATH}/#{spec}"
 end
