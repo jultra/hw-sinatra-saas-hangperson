@@ -36,7 +36,6 @@ When(/^I clone "(.*)" branch of public skeleton "(.*)"$/) do |branch, skel_repo|
 end
 
 
-
 Given(/^I go to the AutoGrader directory "(.*?)"$/) do |rag|
   @dir = rag
 end
