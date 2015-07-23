@@ -22,7 +22,6 @@ Given /^that I am in the project root directory "(.*?)"$/ do |project_dir|
   expect(File.basename(Dir.getwd)).to eq @project_dir
 end
 
-
 When(/^I clone "(.*)" branch of public skeleton "(.*)"$/) do |branch, skel_repo|
   skel = skel_repo.split('/')[1]
   if ! Dir.exists?(skel)
