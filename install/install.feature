@@ -16,7 +16,7 @@ Feature: Installation of dependencies
     And I install the AutoGrader gems
     And I run cucumber for AutoGrader
     Then I should see that there are no errors
-    
+    #
   Scenario: Verify correct version of AutoGraders
     Given I go to the AutoGrader directory "rag"
     And it has an origin of "saasbook/rag"
