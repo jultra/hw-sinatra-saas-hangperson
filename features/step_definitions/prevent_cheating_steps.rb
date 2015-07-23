@@ -1,3 +1,15 @@
+require 'uri'
+require 'cgi'
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
+
+module WithinHelpers
+  def with_scope(locator)
+    locator ? within(locator) { yield } : yield
+  end
+end
+World(WithinHelpers)
+
+
 When /^I start a new game with word "(.*)"$/ do |word|
   stub_request(:post, "http://watchout4snakes.com/wo4snakes/Random/RandomWord").
     to_return(:status => 200, :headers => {}, :body => word)
