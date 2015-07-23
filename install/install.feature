@@ -5,8 +5,13 @@ Feature: Installation of dependencies
 
   Scenario: Install or check skeleton
     Given that I am in the project root directory "hw-sinatra-saas-hangperson-ci"
-    When I clone "master" branch of public skeleton "juanpinzon/hw-sinatra-saas-hangperson-ci"
+  #  When I clone "master" branch of public skeleton "juanpinzon/hw-sinatra-saas-hangperson-ci"
     And I install the gems from "hw-sinatra-saas-hangperson-ci"
+    Then I should see that there are no errors
+
+  Scenario: Install gems
+    Given that I am in the project root directory "hw-ruby-intro-ci"
+    When I install gems
     Then I should see that there are no errors
 
   Scenario: Install or check AutoGraders
@@ -16,7 +21,7 @@ Feature: Installation of dependencies
     And I install the AutoGrader gems
     And I run cucumber for AutoGrader
     Then I should see that there are no errors
-#
+
   Scenario: Verify correct version of AutoGraders
     Given I go to the AutoGrader directory "rag"
     And it has an origin of "saasbook/rag"
