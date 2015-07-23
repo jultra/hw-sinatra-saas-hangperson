@@ -7,7 +7,7 @@ Feature: Installation of dependencies
 
   Scenario: Install gems
     Given that I am in the project root directory "hw-sinatra-saas-hangperson-ci"
-    When I install gems
+    When I install the gems from "hw-sinatra-saas-hangperson-ci"
     Then I should see that there are no errors
 
   Scenario: Install or check AutoGraders
