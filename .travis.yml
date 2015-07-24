@@ -2,15 +2,10 @@ language: ruby
 rvm:
 - 2.2.2
 before_install: 
+#  - gem update --system 2.2.2
+#  - gem --version
+#  - gem install therubyracer -v '0.9.10'
 bundler_args: ''
 script:
 - travis_retry cucumber install/install.feature
 - cucumber features
-env:
-  global:
-    secure: GDLB++gteDWRoU38hr27ZI1P3fpr+rmbcYnEYSGumvQIg62rtR0ekrj3/QRN7A22w0PladtSItRAJ3Y6dQyiLcfV75mfMM8VlM0ahPqbPc+Y+CVP4wuQAEC8kxtYHJuzciMe9y8QaTmu6VGwk2uJfFufZkXvYGENYtHZG9gQrz+8iuA/4AhwOSZrXBJoUwip+2+aT1umec6NwbHVqAljmJ80EgeC054KLgGXoKMc3MVR+BjQdpTmMqaQvpr5BEqxJh8IoHZLC4LV9UfIkI4TY085wZ6B5okWJDOCdmraZWgPoldFQdlcczYE/mr/a1kk2b9jKEmvhks5Zbb3Jtu3qgHZme1DYVcM0/+eciwLjblg28FpdafONtEG3rDgyVEYZEzRRgmZ+/MeUWk9qJpoUgZE8Tn7C+EseGAVJGIK1kJxSc5eRsURQYuzLCc0RDDO98z7CbMBrpMX9GAogR7j+3HZ2aVPk/GpePuUQ2pxiSbyM6J3FZC0FzG5BOMrwsuFUghMkxetzEOgqxY31HehqgI0yRkoP6iP1sPJz0mY15Qr60gJS59uPHbqfQ81y/8+vL+HpPPV/JNhQ6913+8SqEJzz3jNDQTpySPw3kYPjOiNkcU+ur3eoA+i3PjU+Pr4DQZZ6TSd8bvgtPD2x4D+1S7tqGgZ7l943t2ViM7xGQA=
-after_script:
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-  - node ./node_modules/grunt-cli/bin/grunt release
-
