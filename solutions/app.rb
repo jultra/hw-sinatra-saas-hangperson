@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/flash'
-require './lib/hangperson_game.rb'
+require_relative './lib/hangperson_game.rb'
 
 class HangpersonApp < Sinatra::Base
 
