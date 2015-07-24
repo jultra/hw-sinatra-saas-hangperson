@@ -5,7 +5,8 @@ Feature: Installation of dependencies
 
   Scenario: Install or check skeleton
     Given that I am in the project root directory "hw-sinatra-saas-hangperson-ci"
-    When I clone "master" branch of public skeleton "juanpinzon/hw-sinatra-saas-hangperson-ci"
+    When I install or check "juanpinzon/hw-sinatra-saas-hangperson-ci" as "hw-sinatra-saas-hangperson-ci" from "master" branch
+    And I change to branch "master"
     And I install the gems from "hw-sinatra-saas-hangperson-ci"
     Then I should see that there are no errors
 

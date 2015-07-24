@@ -26,21 +26,12 @@ When(/^I clone "(.*)" branch of public skeleton "(.*)"$/) do |branch, skel_repo|
   skel = skel_repo.split('/')[1]
   if ! Dir.exists?(skel)
     puts "Clone '#{skel_repo}'"
-    run_process "git clone https://github.com/juanpinzon/hw-ruby-intro-ci"
-    run_process "git clone https://github.com/#{skel_repo}"
+    run_process "git clone -b #{branch} https://github.com/#{skel_repo}"
   else
     puts "Existing '#{skel}'. Skip clone, fetch instead."
     run_in_dir("git fetch origin", skel )
   end
   expect(Dir).to exist(skel)
-end
-
-Given(/^I clone "(.*?)" branch of public skeleton "(.*?)" into "(.*?)"$/) do |branch, skel_repo, dir|
-  run_process("rm -rf #{skel_repo.split('/')[1]}", ".")
-  run_process("mkdir -p #{dir}", ".")
-  run_process("git clone -b #{branch} https://github.com/#{skel_repo}", dir)
-  cloned = dir+ '/' + skel_repo.split('/')[1]
-  expect(Dir).to exist(cloned)
 end
 
 
