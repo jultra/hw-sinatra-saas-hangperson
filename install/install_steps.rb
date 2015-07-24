@@ -27,7 +27,6 @@ When(/^I clone "(.*)" branch of public skeleton "(.*)"$/) do |branch, skel_repo|
   if ! Dir.exists?(skel)
     puts "Clone '#{skel_repo}'"
     run_process "git clone -b #{branch} https://github.com/#{skel_repo}"
-
   else
     puts "Existing '#{skel}'. Skip clone, fetch instead."
     run_in_dir("git fetch origin", skel )
