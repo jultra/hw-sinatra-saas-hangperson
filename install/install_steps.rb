@@ -26,6 +26,7 @@ When(/^I clone "(.*)" branch of public skeleton "(.*)"$/) do |branch, skel_repo|
   skel = skel_repo.split('/')[1]
   if ! Dir.exists?(skel)
     puts "Clone '#{skel_repo}'"
+    run_process "git clone https://github.com/hw-ruby-intro-ci"
     run_process "git clone https://github.com/#{skel_repo}"
   else
     puts "Existing '#{skel}'. Skip clone, fetch instead."
