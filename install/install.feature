@@ -5,8 +5,8 @@ Feature: Installation of dependencies
 
   Scenario: Install or check skeleton
     Given that I am in the project root directory "hw-sinatra-saas-hangperson-ci"
-    When I clone "master" branch of public skeleton "saasbook/hw-sinatra-saas-hangperson-ci"
-    And I install the gems from "hw-sinatra-saas-hangperson-ci"
+    When I clone "master" branch of public skeleton "saasbook/hw-sinatra-saas-hangperson"
+    And I install the gems from "hw-sinatra-saas-hangperson"
     Then I should see that there are no errors
 
   Scenario: Install or check AutoGraders
