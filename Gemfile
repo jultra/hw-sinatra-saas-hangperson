@@ -3,8 +3,6 @@ ruby '2.2.2'
 
 gem 'sinatra', '>= 1.4'
 gem 'sinatra-flash', '0.3.0'
-gem 'ruby-filemagic', '0.7.0'
-
 
 group :development, :test do
   gem 'cucumber', '2.0.0'
