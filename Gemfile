@@ -3,6 +3,7 @@ ruby '2.2.2'
 
 gem 'sinatra', '>= 1.4'
 gem 'sinatra-flash', '0.3.0'
+gem 'rake'
 #gem 'ruby-filemagic', '0.7.0'
 
 
@@ -25,3 +26,10 @@ group :development, :test do
   gem 'webmock', '1.21.0'
   gem 'ZenTest', '4.11.0'
 end
+
+#gem 'nokogiri'
+#gem 'mechanize'
+#gem 'byebug'
+#gem 'rails_12factor'
+
+
