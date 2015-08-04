@@ -3,9 +3,6 @@ ruby '2.2.2'
 
 gem 'sinatra', '>= 1.4'
 gem 'sinatra-flash', '0.3.0'
-gem 'rake'
-#gem 'ruby-filemagic', '0.7.0'
-
 
 group :development, :test do
   gem 'cucumber', '2.0.0'
@@ -14,6 +11,7 @@ group :development, :test do
 
   gem 'rspec', '3.3.0'
   gem 'rspec-autotest', '1.0.0'
+  gem 'faker'
 
   gem 'rack-test', '0.6.3'
   gem 'rack_session_access', '0.1.1'
