@@ -77,22 +77,4 @@ end
 #  expect(@test_output).to match /#{expected_result}/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #end

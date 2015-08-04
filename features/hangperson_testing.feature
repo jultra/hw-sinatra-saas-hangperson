@@ -14,11 +14,16 @@ Feature: Testing HANGPERSON homework
     And I have a sinatra app in "hw-sinatra-saas-hangperson"
     And I install the app
     And I run a sinatra server
-    When I run AutoGrader with "Heroku grader" strategy for <test_subject> and <spec>
+    When I run AutoGrader for <test_subject> and <spec>
     Then I should see that the results are <expected_result>
     And I should see the execution results with <test_title>
-    And I kill any process using port "9292"
+    
+    #When I run AutoGrader with "Heroku grader" strategy for <test_subject> and <spec>
+    #Then I should see that the results are <expected_result>
+    #And I should see the execution results with <test_title>
+    #And I kill any process using port "9292"
 
  Examples:
     | test_title              | test_subject                | spec               | expected_result   |
     | Specs vs local skeleton | solutions/lib/localhost_uri | autograder/app_spec.rb | Score 100: 100 |
+
