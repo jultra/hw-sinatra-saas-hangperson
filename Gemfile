@@ -23,11 +23,9 @@ group :development, :test do
   gem 'simplecov', '0.10.0'
   gem 'webmock', '1.21.0'
   gem 'ZenTest', '4.11.0'
+
+  gem 'faker'
+  gem 'nokogiri'
+  gem 'mechanize'
+  gem 'rails_12factor'
 end
-
-#gem 'nokogiri'
-#gem 'mechanize'
-#gem 'byebug'
-#gem 'rails_12factor'
-
-
