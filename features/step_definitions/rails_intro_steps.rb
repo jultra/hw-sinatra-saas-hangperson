@@ -70,7 +70,6 @@ And(/^I install the app$/) do
   run_process('bundle install', @app_path)
   #newest version of rails outputs more than simply "your bundle is complete" thus this requirement has been removed
   #expect(@test_output).to match /Your bundle is complete/
-  run_process('bundle exec rake db:migrate && bundle exec rake db:test:prepare', @app_path)
 end
 
 
