@@ -71,10 +71,3 @@ And(/^I install the app$/) do
   #newest version of rails outputs more than simply "your bundle is complete" thus this requirement has been removed
   #expect(@test_output).to match /Your bundle is complete/
 end
-
-
-#Then(/^I should see that the results are (.*)$/) do |expected_result|
-#  expect(@test_output).to match /#{expected_result}/
-
-
-#end
