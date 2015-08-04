@@ -48,8 +48,7 @@ Given(/^I run a sinatra server$/) do
 
 end
 
-
-Given(/^I kill any process using port "(.*)" $/) do |port|
+Given(/^I kill any process using port "([^"]*)"$/) do |port|
   # try progressively more forceful shutdown requests
   if `lsof -wni tcp:#{port}` != ''
     puts "Killing a process that was using port #{port}"
