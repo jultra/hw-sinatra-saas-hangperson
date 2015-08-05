@@ -1,9 +1,10 @@
 language: ruby
 rvm:
   - "2.2.2"
+sudo: true
 before_install:
-  - apt-get update -qq
-  - apt-get install -y libmagic-dev
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libmagic-dev
 bundler_args: ''
 script:
   - travis_retry cucumber install/install.feature
