@@ -1,3 +1,5 @@
+Note that these are opinionated walkthroughs from Sam Joseph.  Opinions expressed are those of Sam Joseph alone and do not necessarily reflect the opinions of UCBerkeley or any to it's employees.
+
 We can follow the initial instructions in "Part 0: Demystifying SaaS app creation" with these commands:
 
 ```sh
