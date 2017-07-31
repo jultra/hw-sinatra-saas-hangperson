@@ -15,6 +15,12 @@ Testing doesn't currently work
 
 The following approach is what used to work for an old version of the grader that allowed us to grade assignsments from the command line.  However that functionality was removed following the refactoring to use the XQueue gem ...
 
+To bundle install everything on OSX you might first need:
+
+```
+$ brew install libmagic
+```
+
 In order to run the tests first run the following to install the latest production version of the grader:
 
 ```sh
