@@ -841,3 +841,97 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 Finished in 0.03449 seconds (files took 0.71381 seconds to load)
 18 examples, 0 failures, 17 pending
 ```
+
+So if we continue to follow the instructions we remove pending from more locations.  Immediate confusion may arise as in the next test block we have to remove pending from two locations: lines 22 and 28.  [Note: presumably we could remove the pending from line 22 in the skeleton to avoid this possibility for confusion]
+
+There are also tips about debugging, however this is another place where I would recommend running individual tests.  If you have debug breakpoints and autotest running together then you may end up getting confused about which test run you are on when you catch on the breakpoint.  If you are running a specific test via `rspec spec/hangperson_game_spec.rb:17` then you are always clear.
+
+Anyhow, the next error we encounter if we have removed pending from lines 22 and 28 is as follows:
+
+```
+  1) HangpersonGame guessing correctly changes correct guess list
+     Failure/Error: @valid = @game.guess('a')
+     NoMethodError:
+       undefined method `guess' for #<HangpersonGame:0x00000002bab3d0>
+       Did you mean?  guesses
+     # ./spec/hangperson_game_spec.rb:26:in `block (4 levels) in <top (required)>'
+```
+
+and we can change that error by adding the following code (note, we are only adding the code required to change the message, we are specifically not getting involved in trying to work out exactly what this method should do):
+
+```rb
+  def guess(letter)
+    
+  end
+```
+
+in which case we get the following errors:
+
+```
+Failures:
+
+  1) HangpersonGame guessing correctly changes correct guess list
+     Failure/Error: expect(@game.guesses).to eq('a')
+       
+       expected: "a"
+            got: ""
+       
+       (compared using ==)
+     # ./spec/hangperson_game_spec.rb:29:in `block (4 levels) in <top (required)>'
+
+  2) HangpersonGame guessing correctly returns true FIXED
+     Expected pending 'No reason given' to fail. No Error was raised.
+     # ./spec/hangperson_game_spec.rb:32
+
+  3) HangpersonGame guessing incorrectly returns true FIXED
+     Expected pending 'No reason given' to fail. No Error was raised.
+     # ./spec/hangperson_game_spec.rb:45
+
+Finished in 0.02363 seconds (files took 0.61241 seconds to load)
+18 examples, 3 failures, 14 pending
+
+Failed examples:
+
+rspec ./spec/hangperson_game_spec.rb:28 # HangpersonGame guessing correctly changes correct guess list
+rspec ./spec/hangperson_game_spec.rb:32 # HangpersonGame guessing correctly returns true
+rspec ./spec/hangperson_game_spec.rb:45 # HangpersonGame guessing incorrectly returns true
+```
+
+The following code will fix this error:
+
+```rb
+  def guess(letter)
+    @guesses << letter
+  end
+```
+
+At this point we are left with these two failures from what should be failing tests:
+
+```
+Failures:
+
+  1) HangpersonGame guessing correctly returns true FIXED
+     Expected pending 'No reason given' to fail. No Error was raised.
+     # ./spec/hangperson_game_spec.rb:32
+
+  2) HangpersonGame guessing incorrectly returns true FIXED
+     Expected pending 'No reason given' to fail. No Error was raised.
+     # ./spec/hangperson_game_spec.rb:45
+
+Finished in 0.02946 seconds (files took 0.66428 seconds to load)
+18 examples, 2 failures, 14 pending
+
+Failed examples:
+
+rspec ./spec/hangperson_game_spec.rb:32 # HangpersonGame guessing correctly returns true
+rspec ./spec/hangperson_game_spec.rb:45 # HangpersonGame guessing incorrectly returns true
+```
+
+which is confusing ... but this is because RSpec is expecting these pending tests to fail:
+
+https://stackoverflow.com/questions/25041974/rspec-pending-results-in-falied-test
+
+As of RSpec 3.x pending tests are run and if they pass then a failure is raised.  Perhaps these would be better specified as 'skipped' or the methods should explicitly raise errors.
+
+Given the current skeleton we can just remove pending and these tests will pass and the failures will go away. Note that these failures appeared at this point because we implemented the `guess` instance method and in the process made more than one test pass, some of which were still pending.
+
