@@ -141,7 +141,7 @@ To https://git.heroku.com/hangperson-clean2017.git
 
 which should allow us to get to this view on heroku:
 
-![](https://www.dropbox.com/s/l5gx38vmja7di1s/Screenshot%202017-08-08%2014.27.21.png?dl=1)
+![](images/Screenshot%202017-08-08%2014.27.21.png)
 
 Now let's update the `guess` code in the Sinatra `app.rb`.  Note that if we run the feature at this point, we'll see a single failure:
 

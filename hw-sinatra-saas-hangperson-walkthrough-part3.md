@@ -14,11 +14,11 @@ c9testaduror:~/workspace/hw-sinatra-saas-hangperson (master) $ bundle exec rerun
 
 Following the instructions (and self-check question) we should see something like:
 
-![](https://www.dropbox.com/s/wgldhv21dkw4y9k/Screenshot%202017-08-07%2018.33.40.png?dl=1)
+![](images/Screenshot%202017-08-07%2018.33.40.png)
 
 and we might be tempted to click on "new game" which will lead to this error message:
 
-![](https://www.dropbox.com/s/gjjmziyb5qgavaf/Screenshot%202017-08-07%2018.34.01.png?dl=1)
+![](images/Screenshot%202017-08-07%2018.34.01.png)
 
 Now we can deploy to heroku as instructed.
 
@@ -100,7 +100,7 @@ To https://git.heroku.com/hangperson-clean2017.git
 
 and note how the error on heroku is displayed a little differently:
 
-![](https://www.dropbox.com/s/2mpf72lfpo7pkt1/Screenshot%202017-08-07%2018.42.47.png?dl=1)
+![](images/Screenshot%202017-08-07%2018.42.47.png)
 
 because the app is in production mode by default on heroku, rather than development mode on c9
 

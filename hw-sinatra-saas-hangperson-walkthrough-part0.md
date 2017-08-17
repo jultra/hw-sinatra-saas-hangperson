@@ -71,15 +71,15 @@ tansaku:~/workspace/hello_sinatra (master) $ bundle exec rackup -p $PORT -o $IP
 
 and cloud 9 will tell us the URL we can go to to see the running app:
 
-![Cloud9 Help: Your code is running at URL message](https://www.dropbox.com/s/7jr3cj4u9a5ff8w/Screenshot%202017-07-29%2018.02.01.png?dl=1)
+![Cloud9 Help: Your code is running at URL message](images/Screenshot%202017-07-29%2018.02.01.png?dl=1)
 
 It should look like this:
 
-![Hello World message from Sinatra](https://www.dropbox.com/s/p14uwn22vkhr6jf/Screenshot%202017-07-29%2018.03.24.png?dl=1)
+![Hello World message from Sinatra](images/Screenshot%202017-07-29%2018.03.24.png?dl=1)
 
 After you've clicked through on a message about how this is an application preview:
 
-![This is the preview of an application being developed with Cloud9 IDE](https://www.dropbox.com/s/n5dy9ircx0ua0q9/Screenshot%202017-07-29%2018.04.36.png?dl=1)
+![This is the preview of an application being developed with Cloud9 IDE](images/Screenshot%202017-07-29%2018.04.36.png?dl=1)
 
 As we proceed to follow the instructions we'll see the live log from the server displayed in the terminal shell:
 
@@ -449,4 +449,4 @@ And we can see the app running in the specified location:
 
 https://hangperson2017.herokuapp.com/
 
-![hello world on heroku app](https://www.dropbox.com/s/1r2mcq5d1id6wbc/Screenshot%202017-07-31%2017.08.39.png?dl=1)
+![hello world on heroku app](images/Screenshot%202017-07-31%2017.08.39.png)
