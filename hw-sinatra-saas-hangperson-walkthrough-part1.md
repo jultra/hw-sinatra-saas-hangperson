@@ -1510,7 +1510,7 @@ which is a bit DRYer, and then we could go even further like so:
 
 and in both cases all the tests pass.  Of course these ternary statements make it all a little difficult to read, so we might be tempted to do the following:
 
-``rb
+```rb
   def guess(letter)
     raise ArgumentError if unacceptable_guess?(letter)
     letter.downcase!
