@@ -577,6 +577,8 @@ http://solnic.eu/2012/04/04/get-rid-of-that-code-smell-attributes.html
 https://www.reddit.com/r/ruby/comments/rv4yo/get_rid_of_that_code_smell_attributes/
 https://github.com/troessner/reek/blob/master/docs/Attribute.md
 
+Please also see the "principle of least privilege": https://en.wikipedia.org/wiki/Principle_of_least_privilege
+
 Note also that the self-check question about instance variables it not actually correct in that the tests are not specifying the hangperson class has instance variables, they are specifying that they have certain instance methods available, so in fact adding `attr_accessor` methods here is breaking the rule of only ever do the absolute minimum to make tests pass.  Perhaps I'm being overly pedantic here, but there is no need to make instance variables to make these tests pass.  The tests will move on in exactly the same way with the following code:
 
 ```rb
@@ -1476,6 +1478,75 @@ which we can then pass with:
 ```
 
 and all the tests pass, but we are left with a need to refactor!!!!!
+
+We could refactor the guess method like so:
+
+```rb
+  def guess(letter)
+    raise ArgumentError if letter.nil? or letter.empty? or !(letter =~ /[[:alpha:]]/)
+    letter = letter.downcase
+    guess_type_string = word.chars.include?(letter) ? @guesses : @wrong_guesses
+    if guess_type_string.chars.include?(letter) 
+      return false
+    else
+      guess_type_string << letter
+      return true
+    end
+  end
+```
+
+which is a bit DRYer, and then we could go even further like so:
+
+
+```rb
+  def guess(letter)
+    raise ArgumentError if letter.nil? or letter.empty? or !(letter =~ /[[:alpha:]]/)
+    letter = letter.downcase
+    guess_type_string = word.chars.include?(letter) ? @guesses : @wrong_guesses
+    guess_type_string.chars.include?(letter) ? false : guess_type_string << letter
+  end
+
+```
+
+and in both cases all the tests pass.  Of course these ternary statements make it all a little difficult to read, so we might be tempted to do the following:
+
+``rb
+  def guess(letter)
+    raise ArgumentError if unacceptable_guess?(letter)
+    letter.downcase!
+    storage = where_to_save_guess(letter)
+    valid = is_valid_guess?(letter, storage)
+    storage << letter if valid
+    valid
+  end
+  
+  private
+  
+  def unacceptable_guess?(letter)
+    letter.nil? or letter.empty? or !(letter =~ /[[:alpha:]]/)
+  end
+  
+  def where_to_save_guess(letter)
+    word.chars.include?(letter) ? @guesses : @wrong_guesses
+  end
+  
+  def is_valid_guess?(letter, storage)
+    !storage.chars.include?(letter)
+  end
+```
+
+which also passes all the tests, and is arguably a bit more readable, and explains the intent
+a bit better.  Of course we've got the general smell here that the code we've been driven to create violates the principle of command-query separation (CQS) whereby the process of making a guess, is also returning an indication of whether the guess is valid.  Ideally we should be able to ask questions about whether a guess is valid repeatedly without having side effects ...
+
+maybe we could add a self-check question about the way in which CQS is violated here, and set a bonus task of how to adjust the code to overcome it?
+
+https://en.wikipedia.org/wiki/Command%E2%80%93query_separation
+
+an alternative refactoring might use sets to store the guesses and wrong guesses ... 
+
+
+
+
 
 
 
