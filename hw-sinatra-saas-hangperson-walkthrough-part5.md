@@ -448,7 +448,6 @@ c9testaduror:~/workspace/hw-sinatra-saas-hangperson (master) $ git commit -am 'd
  1 file changed, 6 insertions(+), 14 deletions(-)
 c9testaduror:~/workspace/hw-sinatra-saas-hangperson (master) $ git push heroku master
 ```
-```
 
 This doesn't do all we want on the grader:
 
