@@ -3,7 +3,7 @@ Hangperson CI
 
 [![Build Status](https://magnum.travis-ci.com/saasbook/hw-sinatra-saas-hangperson-ci.svg?token=CPXPCn5Dy1cwCKsavtqL&branch=master)](https://magnum.travis-ci.com/saasbook/hw-sinatra-saas-hangperson-ci)
 
-Please find instructions for the homework itself at: https://github.com/saasbook/hw-sinatra-saas-hangperson-ci/blob/master/README.md
+Please find instructions for the homework itself at: https://github.com/saasbook/hw-sinatra-saas-hangperson/blob/master/README.md
 
 This is a separate (private) repo that contains the solutions and walkthrough, as well as tests of various aspects of the assignment.
 
