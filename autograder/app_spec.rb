@@ -1,10 +1,17 @@
 require 'mechanize'
 require 'json'
 
+RSpec.configure do |config|
+  config.mock_with :rspec do |mocks|
+    mocks.syntax = [:expect, :should]
+  end
+end
+
 # A module that mechs the following spec tests look much cleaner
 module MechanizeHelpers
 
-  @@BASE_URI =  ENV['HEROKU_URI'] !~ /^http:\/\// ? "http://" + ENV['HEROKU_URI'] : ENV['HEROKU_URI']
+  @@TRIM_URI = ENV['HEROKU_URI'].strip
+  @@BASE_URI =  @@TRIM_URI !~ /^http:\/\// ? "http://" + @@TRIM_URI : @@TRIM_URI
 
   def guess(letter)
     page = @mech.current_page
@@ -26,7 +33,7 @@ module MechanizeHelpers
   def click_new_game
     page = @mech.get(@@BASE_URI + "/new")
     form = page.form_with(:action => '/create') ||
-           page.form_with(:action => 'create')
+      page.form_with(:action => 'create')
     form.click_button
   end
 
@@ -94,7 +101,7 @@ describe "Hangperson" do
     it "should reveal the letter if it appears many times [5 points]" , points: 5 do
       new_game "animal"
       guess "a"
-      expect(word_board).to eq("a---a-") 
+      expect(word_board).to eq("a---a-")
     end
     it "should add to wrong guesses when incorrect [5 points]" , points: 5 do
       new_game "xylophone"
