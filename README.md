@@ -1074,7 +1074,6 @@ We can follow the suggestion to add `attr_accessors` to the `lib/hangperson` cla
 although it's not the only way, and we might feel that using `attr_accessor` is a bit of a code smell as discussed in the following links:
 
 
-http://solnic.eu/2012/04/04/get-rid-of-that-code-smell-attributes.html
 https://www.reddit.com/r/ruby/comments/rv4yo/get_rid_of_that_code_smell_attributes/
 https://github.com/troessner/reek/blob/master/docs/Attribute.md
 
