@@ -12,11 +12,17 @@ class HangpersonGame
     @word = word
   end
 
+  # You can test it by installing irb via $ gem install irb
+  # and then running $ irb -I. -r app.rb
+  # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
+  #  => "cooking"   <-- some random word
   def self.get_random_word
     require 'uri'
     require 'net/http'
-    uri = URI('http://watchout4snakes.com/wo4snakes/Random/RandomWord')
-    Net::HTTP.post_form(uri ,{}).body
+    uri = URI('http://randomword.saasbook.info/RandomWord')
+    Net::HTTP.new('randomword.saasbook.info').start { |http|
+      return http.post(uri, "").body
+    }
   end
 
 end
