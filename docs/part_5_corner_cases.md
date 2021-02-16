@@ -43,6 +43,7 @@ You would of course change 'my-app-12345' to match your Heroku URL.
 
 Lastly, visit the same URL that you put into the text file with your web browser to be sure that your app is running correctly at that address before submitting the text file.
 
------
+Submit your file in the Activity 3-2 Submission Bin in the VLE site. 
+
 
 Next: [Conclusion](part_6_conclusion.md)
