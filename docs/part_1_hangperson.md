@@ -16,6 +16,8 @@ Developing Hangperson Using TDD and Guard
 
 **What you will do:**  Use `autotest`, our provided test cases will be re-run each time you make a change to the app code.  One by one, the tests will go from red (failing) to green (passing) as you create the app code.  By the time you're done, you'll have a working Hangperson game class, ready to be "wrapped" in SaaS using Sinatra.
 
+**Note on Submission Requirements:** You will also be required to submit the output of your `git log` as part of the requirements of this activity. Make sure that you commit often as you work on this project. 
+
 Overview
 --------
 
