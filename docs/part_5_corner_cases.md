@@ -1,6 +1,6 @@
 
-Part 5: Corner Cases
-====================
+Part 5: Corner Cases and Submission
+===================================
 
 By now you should be familiar with the cycle:
 
