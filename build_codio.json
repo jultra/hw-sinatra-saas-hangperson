@@ -55,7 +55,7 @@
       },
       {
         "sinatra-url.txt": {
-          "create": true
+          "src": "sinatra-url.txt"
         }
       }
     ]
