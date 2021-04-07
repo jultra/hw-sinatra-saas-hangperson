@@ -1,0 +1,65 @@
+{
+  "root": {
+    "create": true,
+    "children": [
+      {
+        ".guides": {
+          "src": "scaffolding/codio",
+          "except": [
+            "scaffolding/codio/.settings"
+          ],
+          "children": [
+            {
+              "content": {
+                "src": "scaffolding/content"
+              }
+            },
+            {
+              "img": {
+                "src": "scaffolding/img"
+              }
+            },
+            {
+              "secure": {
+                "create": true,
+                "children": [
+                  {
+                    "gradescope.py": {
+                      "src": "autograder/gradescope.py"
+                    }
+                  },
+                  {
+                    "run.sh": {
+                      "src": "autograder/run.sh"
+                    }
+                  },
+                  {
+                    "autograder": {
+                      "src": "autograder",
+                      "except": [
+                        "autograder/gradescope.py",
+                        "autograder/run.sh"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        ".settings": {
+          "src": "scaffolding/codio/.settings"
+        }
+      },
+      {
+        "sinatra-url.txt": {
+          "create": true
+        }
+      }
+    ]
+  }
+}
+
+

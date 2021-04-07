@@ -1,0 +1,28 @@
+{
+  "root": {
+    "src": "solutions/",
+    "children": [
+      {
+        "lib/hangperson_game.rb": {
+          "src": "starter-code/hangperson_game.rb"
+        }
+      },
+      {
+        "spec/hangperson_game_spec.rb": {
+          "src": "starter-code/hangperson_game_spec.rb"
+        }
+      },
+      {
+        "views/new.erb": {
+          "src": "starter-code/new.erb"
+        }
+      },
+      {
+        "app.rb": {
+          "src": "starter-code/app.rb"
+        }
+      }
+    ]
+  }
+}
+
