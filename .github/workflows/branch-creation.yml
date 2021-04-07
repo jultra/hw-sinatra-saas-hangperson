@@ -1,16 +1,15 @@
 name: CHIPS Automation Workflow
 
+###########################################################################
+### WARNING: DO NOT EDIT THESE FILES IN AN INDIVIDUAL CHIP REPO. PLEASE ###
+### USE https://github.com/saasbook/chips_github_workflows/ INSTEAD.    ###
+###########################################################################
+
 on:
   push:
     branches:
       # Push events on master branch
       - master
-      # - develop
-      # Push events to branches matching refs/heads/releases/10
-      # - "releases/**"
-  # release:
-  #   types:
-  #     - created
 
 jobs:
   create-new-branch:

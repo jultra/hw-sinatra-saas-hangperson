@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+###########################################################################
+### WARNING: DO NOT EDIT THESE FILES IN AN INDIVIDUAL CHIP REPO. PLEASE ###
+### USE https://github.com/saasbook/chips_github_workflows/ INSTEAD.    ###
+###########################################################################
+
 import json
 import os
 import collections.abc
