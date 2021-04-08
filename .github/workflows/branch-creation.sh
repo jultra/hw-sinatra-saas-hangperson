@@ -1,5 +1,10 @@
 #!/bin/bash
 
+###########################################################################
+### WARNING: DO NOT EDIT THESE FILES IN AN INDIVIDUAL CHIP REPO. PLEASE ###
+### USE https://github.com/saasbook/chips_github_workflows/ INSTEAD.    ###
+###########################################################################
+
 source ./.github/CHIPS-config.sh
 if ! [[ `git -c user.name="GitHub Actions" -c user.email="actions@github.com" subtree pull --prefix .github/workflows/ https://github.com/saasbook/chips_github_workflows.git master --squash 2>&1` = *"Subtree is already at commit"* ]]; then
     echo "Detected changes in upstream workflow repository. Pulling and restarting workflow."
@@ -28,7 +33,7 @@ git -c user.name="GitHub Actions" -c user.email="actions@github.com" commit -m "
 
 git remote add student-facing ${not_ci_repo_ssh}
 
-git fetch --unshallow student-facing
+git fetch student-facing
 
 if [[ `git branch -r 2>&1` = *student-facing/master* ]]; then
     PUSH_OPT=""
