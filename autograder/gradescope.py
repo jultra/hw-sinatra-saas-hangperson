@@ -14,9 +14,9 @@ Run from Advanced Code Test with the following command line arguments:
 """
 
 # get repo path
-out = subprocess.Popen("find .guides/secure/ -maxdepth 1 -mindepth 1 -type d", shell=True, stdout=subprocess.PIPE, universal_newlines=True).communicate()[0]
-priv_rep = out.strip()
-submission_path = f'{priv_rep}/autograder/submission/'
+# out = subprocess.Popen("find .guides/secure/ -maxdepth 1 -mindepth 1 -type d", shell=True, stdout=subprocess.PIPE, universal_newlines=True).communicate()[0]
+# priv_rep = out.strip()
+submission_path = '.guides/secure/autograder/submission/'
 
 # remove submission
 if os.path.exists(submission_path):
@@ -30,8 +30,8 @@ if len (sys.argv) > 1:
   if os.path.isfile(file):
     os.mkdir(submission_path)
     shutil.copy2(file, submission_path)
-  
-os.chdir(f'{priv_rep}/autograder')
+
+os.chdir('.guides/secure/autograder')
 
 # make symlink
 subprocess.call('ln -s ./ source', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -55,7 +55,7 @@ for test in data["tests"]:
   if len(test["output"]) > 0:
     print("<b>" + test["name"] + "</b>")
     print(test["output"])
-print("</div>")  
+print("</div>")
 
 # rm gradescope
 os.remove("results/results.json")
@@ -63,7 +63,7 @@ os.remove('source')
 # remove submission
 if os.path.exists(submission_path):
   shutil.rmtree(submission_path)
-  
+
 # # output in pretty HTML to student
 if total_points == 0:
   grade = 100

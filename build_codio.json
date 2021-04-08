@@ -55,7 +55,7 @@
       },
       {
         "sinatra-url.txt": {
-          "src": "sinatra-url.txt"
+          "src": "starter-code/sinatra-url.txt"
         }
       }
     ]
