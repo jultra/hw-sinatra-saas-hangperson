@@ -28,6 +28,7 @@ Prerequisites
 * You should be comfortable with basic Git usage and how to push your code to GitHub, as described in Appendix A of [ESaaS](http://www.saasbook.info).
 * You will need "survival level" Unix command-line skills and facility with an editor to edit code files.
 
+**NOTE: You may find the [Sinatra documentation](https://sinatrarb.com) helpful to have on hand.**
 
 Introduction
 ------------
@@ -53,4 +54,3 @@ Contents
 * Part 4: [Introducing Cucumber](docs/part_4_cucumber.md)
 * Part 5: [Corner Cases](docs/part_5_corner_cases.md)
 * Part 6: [Conclusion](docs/part_6_conclusion.md)
-* Part 7: [Optional Challenge Assignment](docs/part_7_optional_challenge.md)

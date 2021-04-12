@@ -42,8 +42,13 @@ describe HangpersonGame do
         expect(@game.guesses).to eq('')
         expect(@game.wrong_guesses).to eq('z')
       end
+<<<<<<< HEAD
       it 'returns false', :pending => true do
         expect(@valid).not_to be true
+=======
+      it 'returns true', :pending => true do
+        expect(@valid).not_to be false
+>>>>>>> upstream/master
       end
     end
     context 'same letter repeatedly' do
@@ -121,4 +126,8 @@ describe HangpersonGame do
       expect(@game.check_win_or_lose).to eq(:play)
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> upstream/master
