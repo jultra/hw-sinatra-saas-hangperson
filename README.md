@@ -52,5 +52,5 @@ Contents
 * Part 2: [RESTful thinking for HangPerson](docs/part_2_restful_thinking.md)
 * Part 3: [Connecting HangpersonGame to Sinatra](docs/part_3_connecting_hangperson_to_sinatra.md)
 * Part 4: [Introducing Cucumber](docs/part_4_cucumber.md)
-* Part 5: [Corner Cases](docs/part_5_corner_cases.md)
+* Part 5: [Corner Cases and Submission Instructions](docs/part_5_corner_cases.md)
 * Part 6: [Conclusion](docs/part_6_conclusion.md)

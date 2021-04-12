@@ -1,6 +1,10 @@
 
 Part 5: Corner Cases and Submission
+<<<<<<< HEAD
 ====================
+=======
+===================================
+>>>>>>> f7b2c8d3350f48c7bb6f9dc13109993cb949c016
 
 By now you should be familiar with the cycle:
 
@@ -45,6 +49,5 @@ Lastly, visit the same URL that you put into the text file with your web browser
 
 Submit your file in the Activity 3-2 Submission Bin in the VLE site. 
 
------
 
 Next: [Conclusion](part_6_conclusion.md)
